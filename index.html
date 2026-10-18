@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLIPIX | Flyers, CVs, Menús y Más</title>
+    <meta name="description" content="Diseños modernos y personalizables para impulsar tu marca o evento. Flyers, curriculum vitae, menús, invitaciones y tarjetas de presentación.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4f46e5', // Indigo 600
+                        secondary: '#db2777', // Pink 600
+                        dark: '#111827',
+                        light: '#f9fafb',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animaciones suaves personalizadas */
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ocultar barra de desplazamiento para secciones horizontales si las hay */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light antialiased selection:bg-primary selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        K
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-dark">flipix<span class="text-primary"></span></span>
+                </div>
+
+                <!-- Menú de escritorio -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary font-medium transition-colors">Inicio</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-primary font-medium transition-colors">Servicios</a>
+                    <a href="#ventajas" class="text-gray-600 hover:text-primary font-medium transition-colors">Por qué elegirnos</a>
+                    <a href="#contacto" class="bg-dark text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">¡Haz tu pedido!</a>
+                </div>
+
+                <!-- Botón menú móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-dark focus:outline-none p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#inicio" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Inicio</a>
+                <a href="#servicios" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Servicios</a>
+                <a href="#ventajas" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Ventajas</a>
+                <a href="#contacto" class="block mt-4 text-center bg-primary text-white px-6 py-3 rounded-xl font-medium shadow-md">Haz tu pedido</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Decoraciones de fondo -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/10 blur-3xl"></div>
+            <div class="absolute top-40 -left-20 w-72 h-72 rounded-full bg-secondary/10 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-indigo-50 text-primary text-sm font-semibold mb-6 border border-indigo-100">
+                ✨ Diseños 100% Personalizables
+            </span>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-dark tracking-tight mb-8">
+                Diseños que <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">hablan por ti</span>
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Destaca entre la multitud. Creamos flyers, currículums, menús, invitaciones y tarjetas de presentación con diseños modernos, profesionales y adaptados a tu estilo único.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#servicios" class="px-8 py-4 bg-primary text-white rounded-full font-semibold text-lg hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/30">
+                    Ver Catálogo
+                </a>
+                <a href="#contacto" class="px-8 py-4 bg-white text-dark border-2 border-gray-200 rounded-full font-semibold text-lg hover:border-dark hover:bg-gray-50 transition-all">
+                    Cotizar Diseño
+                </a>
+            </div>
+            
+            <!-- Imagen Hero de muestra -->
+            <div class="mt-16 relative mx-auto w-full max-w-5xl fade-in-up delay-200">
+                <div class="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" alt="Muestra de diseños gráficos" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white text-left">
+                        <p class="font-bold text-lg">Portafolio Premium</p>
+                        <p class="text-sm opacity-80">Calidad que se nota a simple vista</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-sm font-bold text-primary tracking-wide uppercase mb-3">Nuestros Servicios</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-dark mb-6">Todo lo que necesitas para tu marca o evento</h3>
+                <p class="text-lg text-gray-600">Ofrecemos una amplia gama de soluciones gráficas con acabados profesionales y entregas rápidas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta: Flyers -->
+                <div class="group bg-light rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-primary">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-3">Flyers Publicitarios</h4>
+                    <p class="text-gray-600 mb-6">Impacta a tu audiencia con flyers llamativos para eventos, promociones, fiestas o publicidad corporativa.</p>
+                    <a href="#contacto" class="inline-flex items-center text-primary font-medium hover:text-indigo-800">
+                        Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Tarjeta: CVs -->
+                <div class="group bg-light rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-gray-100 fade-in-up delay-100">
+                    <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-secondary">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-3">Curriculum Vitae</h4>
+                    <p class="text-gray-600 mb-6">Consigue el trabajo de tus sueños con un CV estructurado, moderno y que destaque tus verdaderas habilidades.</p>
+                    <a href="#contacto" class="inline-flex items-center text-secondary font-medium hover:text-pink-800">
+                        Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Tarjeta: Menús -->
+                <div class="group bg-light rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-gray-100 fade-in-up delay-200">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-orange-600">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-3">Menús de Restaurante</h4>
+                    <p class="text-gray-600 mb-6">Abre el apetito de tus clientes con cartas y menús elegantes, organizados y diseñados para vender más.</p>
+                    <a href="#contacto" class="inline-flex items-center text-orange-600 font-medium hover:text-orange-800">
+                        Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Tarjeta: Invitaciones -->
+                <div class="group bg-light rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-gray-100 fade-in-up">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-purple-600">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-3">Invitaciones de Cumpleaños</h4>
+                    <p class="text-gray-600 mb-6">Diseños únicos, temáticos y divertidos para cumpleaños, bodas, baby showers y cualquier celebración especial.</p>
+                    <a href="#contacto" class="inline-flex items-center text-purple-600 font-medium hover:text-purple-800">
+                        Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Tarjeta: Tarjetas Presentación -->
+                <div class="group bg-light rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-gray-100 fade-in-up delay-100">
+                    <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-teal-600">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-3">Tarjetas de Presentación</h4>
+                    <p class="text-gray-600 mb-6">Deja una marca imborrable en tus reuniones con tarjetas profesionales, minimalistas o súper creativas.</p>
+                    <a href="#contacto" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-800">
+                        Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+                
+                <!-- Tarjeta: Extra / Oferta -->
+                <div class="group bg-gradient-to-br from-dark to-gray-800 rounded-3xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-up delay-200 text-white flex flex-col justify-center">
+                    <h4 class="text-2xl font-bold mb-3">¿Necesitas un paquete completo?</h4>
+                    <p class="text-gray-300 mb-6">Pregunta por nuestro <strong>Brand Pack</strong>: Logo, tarjeta, flyer y banner para redes a un precio especial.</p>
+                    <a href="#contacto" class="bg-white text-dark px-6 py-3 rounded-xl font-bold text-center hover:bg-gray-100 transition-colors w-full">
+                        Pedir Presupuesto
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ventajas" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <!-- Imagen de diseño de mockup -->
+                        <img src="https://res.cloudinary.com/tobngyj2/image/upload/v1792354925/Brown_Illustrative_Photobased_Burger_Grand_Opening_Promo_Special_Flyer_-_1.png" alt="Muestra de flyer de hamburguesas" class="rounded-3xl shadow-xl w-full object-cover">
+                        <!-- Insignia flotante -->
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-dark text-xl">+500</p>
+                                <p class="text-sm text-gray-500">Diseños Entregados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-sm font-bold text-secondary tracking-wide uppercase mb-3">Beneficios</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-dark mb-6">Diseño de alta calidad, rápido y sin complicaciones</h3>
+                    
+                    <div class="space-y-6 mt-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-1">100% Personalizable</h4>
+                                <p class="text-gray-600">Colores, fuentes, imágenes y textos. Adaptamos cada detalle a la identidad de tu marca o a tus gustos personales.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-1">Entrega Rápida</h4>
+                                <p class="text-gray-600">Sabemos que el tiempo es oro. Entregamos los primeros bocetos en 24-48 horas laborables.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-1">Formatos Listos</h4>
+                                <p class="text-gray-600">Recibe tus diseños en formatos listos para imprimir (PDF alta resolución) o listos para redes sociales (PNG/JPG).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-dark mb-6">¿Listo para mejorar tu imagen?</h2>
+            <p class="text-lg text-gray-600 mb-10">Cuéntanos qué diseño necesitas y te enviaremos una cotización sin compromiso.</p>
+            
+            <form id="contact-form" class="bg-light p-8 md:p-12 rounded-3xl shadow-lg border border-gray-100 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Ej. Ana Pérez" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="tu@email.com" required>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="service" class="block text-sm font-medium text-gray-700 mb-2">¿Qué necesitas?</label>
+                    <select id="service" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white" required>
+                        <option value="" disabled selected>Selecciona un servicio</option>
+                        <option value="flyer">Flyer Publicitario</option>
+                        <option value="cv">Curriculum Vitae</option>
+                        <option value="menu">Menú de Restaurante</option>
+                        <option value="invitacion">Invitación (Cumpleaños, Boda, etc.)</option>
+                        <option value="tarjeta">Tarjeta de Presentación</option>
+                        <option value="otro">Otro / Paquete completo</option>
+                    </select>
+                </div>
+                
+                <div class="mb-8">
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Detalles del proyecto</label>
+                    <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="Cuéntanos un poco sobre colores, estilo, textos..." required></textarea>
+                </div>
+                
+                <button type="submit" class="w-full py-4 px-6 bg-primary hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                    <span>Enviar Solicitud</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+                <div id="form-message" class="hidden mt-4 text-center p-3 rounded-lg text-green-700 bg-green-50 border border-green-200">
+                    ¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">K</div>
+                        <span class="font-bold text-xl tracking-tight">KreaDiseño</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Haciendo que tus ideas destaquen en el mundo real y digital con diseños profesionales y a medida.</p>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces rápidos</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Catálogo de Servicios</a></li>
+                        <li><a href="#ventajas" class="hover:text-white transition-colors">Beneficios</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Redes / Contacto -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <!-- Iconos de redes (Placeholders SVG) -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-secondary transition-colors text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">hola@kreadiseno.com</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 KreaDiseño. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group hover:shadow-[#25D366]/40" aria-label="Contactar por WhatsApp">
+        <!-- Tooltip que aparece al hacer hover -->
+        <span class="absolute right-full mr-4 bg-white text-gray-800 px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none after:content-[''] after:absolute after:top-1/2 after:-right-2 after:-mt-1 after:border-4 after:border-transparent after:border-l-white">
+            ¡Escríbenos!
+        </span>
+        <!-- Icono de WhatsApp SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-8 h-8" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Manejo del menú móvil
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            
+            // Cerrar menú móvil al hacer click en un enlace
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // Manejo del formulario de contacto (Simulación)
+            const form = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Cambiar estado del botón
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = 'Enviando...';
+                submitBtn.disabled = true;
+
+                // Simular envío a servidor (1.5 segundos)
+                setTimeout(() => {
+                    formMessage.classList.remove('hidden');
+                    form.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        formMessage.classList.add('hidden');
+                    }, 5000);
+                }, 1500);
+            });
+
+            // Cambio sutil de la barra de navegación al hacer scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    navbar.classList.add('shadow-md');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
